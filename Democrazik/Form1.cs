@@ -36,6 +36,10 @@ namespace Democrazik
 
         private void BLancer_Click(object sender, EventArgs e)
         {
+
+
+            // envois données s
+         //   --------------------------------------------------------------------------------------------------------------------------
             var uri = "http://localhost:8080/session";
 
             Uri u = new Uri(uri);
@@ -45,13 +49,17 @@ namespace Democrazik
             var t = Task.Run(() => PostURI(u, c));
             t.Wait();
             MessageBox.Show(t.Result, "res", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+        //    -----------------------------------------------------------------------------------------------------------------------
             
             Form2 frm = new Form2();
             frm.Show();
            
         }
 
-
+        // fonction qui permet l'envoi
+        //    -----------------------------------------------------------------------------------------------------------------------
         static async Task<string> PostURI(Uri u, HttpContent c)
         {
             var response = string.Empty;
@@ -65,7 +73,13 @@ namespace Democrazik
             }
             return response;
         }
+        //    -----------------------------------------------------------------------------------------------------------------------
 
+
+
+
+          //  fonction qui permet la recuperzation
+            //    -----------------------------------------------------------------------------------------------------------------------
         static async Task<string> GetURI(Uri u)
         {
             var response = string.Empty;
@@ -79,7 +93,7 @@ namespace Democrazik
             }
             return response;
         }
-
+        // -----------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -94,6 +108,9 @@ namespace Democrazik
             /*---------------------------------------------------------------------------------------------------
             Artiste ar = new Artiste();
              ar.nom = "Barbara";
+
+
+
 
             List<Artiste> art = new List<Artiste>();
             List<Morceaux> mrc = new List<Morceaux>();
