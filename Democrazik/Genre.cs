@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Democrazik
 {
-    class Artiste
+    class Genre
     {
         public int id { get; set; }
-        public String nom { get; set; }
+        public String libelle { get; set; }
 
     }
 }
